@@ -1,11 +1,18 @@
 describe("Test suite", () =>{
-
+    before(async function() {
+        const originalClick = browser.constructor.prototype.click;
+        browser.constructor.prototype.click = async function() {
+            await this.waitForExist({ timeout: 5000 });
+            await this.waitForDisplayed({ timeout: 5000 });
+            return originalClick.apply(this, arguments);
+        };
+    });
     beforeEach(async function () {
         await browser.url("https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard");
       });
 
 
-    it("First test", async () => {
+      it("First test", async () => {
         const pageTitle = await browser.getTitle();
     console.log(pageTitle);
      });
@@ -50,9 +57,26 @@ describe("Test suite", () =>{
         await expect(browser).toHaveTitle('Appointment Planner - Syncfusion Angular Components Showcase App')
     });
 
-    describe('Seventh TEST', () => {
-        it('should not be displayed', async () => {
-            await expect($("div.doctors")).toBeDisplayed(); 
+    it ('Seventh TEST', async () => {
+        await expect($("div.doctors")).toBeDisplayed(); 
     });
-});
+  
+    it('should fetch menu links and visit each page', async () => {
+        const menuItems = await browser.$$('ejs-sidebar#plan nerSiderBar div.sidebar-item');
+        await menuItems.forEach(async (link) => {
+            await link.click()
+        })
+    })
+
+    it ('should check is about is Displayed', async () => {
+        let elem = await $("div.about");
+        let isDisplayed = await elem.isDisplayed();
+        await expect(isDisplayed).toEqual(true)
+    });
+
+    it('should detect when element is visible', async () => {
+        const elem = await $("div.preference");
+        await elem.waitForDisplayed({ timeout: 200 })
+
+    })
 });
