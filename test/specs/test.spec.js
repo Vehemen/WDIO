@@ -1,4 +1,5 @@
 describe("Test suite", () =>{
+
     before(async function() {
         const originalClick = browser.constructor.prototype.click;
         browser.constructor.prototype.click = async function() {
@@ -7,10 +8,10 @@ describe("Test suite", () =>{
             return originalClick.apply(this, arguments);
         };
     });
+
     beforeEach(async function () {
         await browser.url("https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard");
       });
-
 
       it("First test", async () => {
         const pageTitle = await browser.getTitle();
