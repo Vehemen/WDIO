@@ -80,4 +80,40 @@ describe("Test suite", () =>{
         await elem.waitForDisplayed({ timeout: 200 })
 
     })
+    
+    
+    it('1 should inject javascript on the add new doctor page', async () => {
+        const result = await browser.execute((a, b, c, d) => {
+            return a + b + c + d
+        }, 1, 2, 3, 4)
+        await $("div.doctors").click();
+        await $("//button[text()='Add New Doctor']").click();
+        await $("input[name='Name']").setValue(result);
+        await $("//button[text()='Save']").click();
+        const emailError = await $("label#Email-info");
+        expect(await emailError.getText()).toEqual("Enter valid email");
+    });
+ 
+    it('2 should wait until chart is displayed', async () => {
+        const selector = '#chartcontainer_ChartBorder';
+        await browser.waitUntil(async () => {
+            return (await browser.$(selector).isExisting()) && (await browser.$(selector).isDisplayed());
+        }, {
+            timeout: 100,
+            timeoutMsg: 'Expected element to be visible after 0,1 seconds'
+        });
+    });
+
+    it('3 Should moveTo about button and click', async () => {
+        const button = await browser.$("div.about");
+        await button.moveTo();
+        await button.click();
+        await expect(browser).toHaveUrlContaining('about')
+    });
+
+    it('4 should delete all cookies and check', async () => {
+        await browser.deleteCookies()
+        const cookies = await browser.getCookies()
+        expect(cookies).toMatchObject([])
+    })
 });
