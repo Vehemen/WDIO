@@ -50,11 +50,13 @@ describe("Test suite", () =>{
     });
     it("fifth TEST", async () => {
         await $("div.doctors").click();
+
         await expect(browser).toHaveUrlContaining('doctors')
     });
 
     it("Sixth TEST", async () => {
         await browser.url("https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/patients");
+
         await expect(browser).toHaveTitle('Appointment Planner - Syncfusion Angular Components Showcase App')
     });
 
@@ -64,14 +66,20 @@ describe("Test suite", () =>{
   
     it('should fetch menu links and visit each page', async () => {
         const menuItems = await browser.$$('ejs-sidebar#plan nerSiderBar div.sidebar-item');
+        
         await menuItems.forEach(async (link) => {
             await link.click()
         })
+        
+        await expect(browser).toHaveUrlContaining('dashboard')
+
     })
 
     it ('should check is about is Displayed', async () => {
         let elem = await $("div.about");
+
         let isDisplayed = await elem.isDisplayed();
+
         await expect(isDisplayed).toEqual(true)
     });
 
