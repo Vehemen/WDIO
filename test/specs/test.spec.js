@@ -1,19 +1,10 @@
 describe("Test suite", () =>{
 
-    before(async function() {
-        const originalClick = browser.constructor.prototype.click;
-        browser.constructor.prototype.click = async function() {
-            await this.waitForExist({ timeout: 5000 });
-            await this.waitForDisplayed({ timeout: 5000 });
-            return originalClick.apply(this, arguments);
-        };
-    });
-
     beforeEach(async function () {
         await browser.url("https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard");
       });
 
-      it("First test", async () => {
+    it("First test", async () => {
         const pageTitle = await browser.getTitle();
     console.log(pageTitle);
      });
@@ -70,22 +61,25 @@ describe("Test suite", () =>{
         await menuItems.forEach(async (link) => {
             await link.click()
         })
+        await $("a=View All").click();
         
-        await expect(browser).toHaveUrlContaining('dashboard')
+        await expect(browser).toHaveUrlContaining('doctors')
 
     })
 
-    it ('should check is about is Displayed', async () => {
-        let elem = await $("div.about");
+    it ('should check planner is about is Displayed', async () => {
+        await $("div.calendar").waitForAndClick(); //custom click
 
+        let elem = await $("div.planner-calendar");
         let isDisplayed = await elem.isDisplayed();
 
         await expect(isDisplayed).toEqual(true)
     });
 
-    it('should detect when element is visible', async () => {
-        const elem = await $("div.preference");
-        await elem.waitForDisplayed({ timeout: 200 })
-
+    it('should detect when wrapper is visible', async () => {
+        await browser.url("https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/patients");
+        const elem = await $("div.patients-detail-wrapper");
+        
+        await elem.waitForDisplayed({ timeout: 200})
     })
 });
