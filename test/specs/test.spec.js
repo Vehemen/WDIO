@@ -106,14 +106,37 @@ describe("Test suite", () =>{
 
     it('3 Should moveTo about button and click', async () => {
         const button = await browser.$("div.about");
-        await button.moveTo();
+        await button.moveTo(); //browser action
         await button.click();
         await expect(browser).toHaveUrlContaining('about')
     });
 
-    it('4 should delete all cookies and check', async () => {
-        await browser.deleteCookies()
-        const cookies = await browser.getCookies()
-        expect(cookies).toMatchObject([])
-    })
+    it('4 should add cookies and and check', async () => {
+        const primaryCookies = [
+            {name: 'This one to check', value: 'check'},
+            {name: 'This one to be sure', value: 'sure'}
+        ];
+        await browser.deleteCookies();
+        await browser.setCookies(primaryCookies);
+        const cookies = await browser.getCookies();
+    
+        primaryCookies.forEach(cookie => {
+            const foundCookie = cookies.find(c => c.name === cookie.name && c.value === cookie.value);
+            expect(foundCookie).toBeDefined();
+        });
+    });
+
+    it('should add elements asynchronously', async () => {
+        await browser.executeAsync((done) => {
+            setTimeout(() => {
+                const div = document.createElement('div');
+                div.id = 'newElement';
+                document.body.appendChild(div);
+                done();
+            }, 1000);
+        });
+        const element = await browser.$('#newElement');
+        expect(element).toBeDefined();
+    });
+    
 });
