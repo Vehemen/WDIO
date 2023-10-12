@@ -1,3 +1,4 @@
+
 exports.config = {
     //
     // ====================
@@ -209,8 +210,13 @@ exports.config = {
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
      */
-    // beforeHook: function (test, context) {
-    // },
+    beforeHook: async function (test, context) {
+        browser.addCommand('waitForAndClick', async function() {
+            await this.waitForExist({ timeout: 5000 });
+            await this.waitForDisplayed({ timeout: 5000 });
+            return this.click();
+        }, true);
+    },
     /**
      * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
      * afterEach in Mocha)
