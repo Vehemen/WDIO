@@ -4,7 +4,6 @@ describe("Test suite", () =>{
         await browser.url("https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard");
       });
 
-
     it("First test", async () => {
         const pageTitle = await browser.getTitle();
     console.log(pageTitle);
@@ -42,17 +41,45 @@ describe("Test suite", () =>{
     });
     it("fifth TEST", async () => {
         await $("div.doctors").click();
+
         await expect(browser).toHaveUrlContaining('doctors')
     });
 
     it("Sixth TEST", async () => {
         await browser.url("https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/patients");
+
         await expect(browser).toHaveTitle('Appointment Planner - Syncfusion Angular Components Showcase App')
     });
 
-    describe('Seventh TEST', () => {
-        it('should not be displayed', async () => {
-            await expect($("div.doctors")).toBeDisplayed(); 
+    it ('Seventh TEST', async () => {
+        await expect($("div.doctors")).toBeDisplayed(); 
     });
-});
+  
+    it('should fetch menu links and visit each page', async () => {
+        const menuItems = await browser.$$('ejs-sidebar#plan nerSiderBar div.sidebar-item');
+        
+        await menuItems.forEach(async (link) => {
+            await link.click()
+        })
+        await $("a=View All").click();
+        
+        await expect(browser).toHaveUrlContaining('doctors')
+
+    })
+
+    it ('should check planner is about is Displayed', async () => {
+        await $("div.calendar").waitForAndClick(); //custom click
+
+        let elem = await $("div.planner-calendar");
+        let isDisplayed = await elem.isDisplayed();
+
+        await expect(isDisplayed).toEqual(true)
+    });
+
+    it('should detect when wrapper is visible', async () => {
+        await browser.url("https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/patients");
+        const elem = await $("div.patients-detail-wrapper");
+        
+        await elem.waitForDisplayed({ timeout: 200})
+    })
 });
