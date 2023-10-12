@@ -26,9 +26,8 @@ describe("Test suite", () =>{
         await expect(browser).toHaveUrlContaining('doctors')
 
     })
-
     it ('should check planner is about is Displayed', async () => {
-        waitForAndClick(); //custom click
+        await $("div.calendar").waitForAndClick(); //custom click
 
         let elem = await $("div.planner-calendar");
         let isDisplayed = await elem.isDisplayed();
@@ -36,12 +35,18 @@ describe("Test suite", () =>{
         await expect(isDisplayed).toEqual(true)
     });
 
-    it('should detect when wrapper is visible', async () => {
+    it('Should update patients name', async () => {
         await browser.url("https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/patients");
-
-        await $("//button[text()='Add New Patient']").click();
-        const elem = await $("div.patients-detail-wrapper");
+    
+        const element = await browser.$('/html/body/app-root/app-main/div/main/app-patients/div[1]/div/div[2]/ejs-grid/div[7]/div/table/tbody/tr[1]/td[2]/span');
+        await element.click(); 
+        await $("//button[text()='Edit']").click();
+        await $("//input[@name='Name']").setValue("Display test");
+        await $("//button[text()='Save']").click();
+        const expectedName = 'Display test'; 
+        const patientElement = await browser.$(`//span[text()='${expectedName}']`);
+        const isExisting = await patientElement.isExisting();
         
-        await elem.waitForDisplayed({ timeout: 200})
+        expect(isExisting).toBe(true);
     })
 });
