@@ -1,4 +1,8 @@
-
+const{
+    existsSync,
+    mkdirSync
+} = require("fs");
+const { exec } = require('child_process');
 exports.config = {
     //
     // ====================
@@ -23,7 +27,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -52,8 +56,9 @@ exports.config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
-    }],
+        browserName: 'chrome'}, {
+        browserName: 'firefox'}
+    ],
 
     //
     // ===================
@@ -124,7 +129,14 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    reporters: [
+        ['allure', {
+        outputDir: "allure-results",
+        disableWebdriverStepsReporting:true,
+        disableWebdriverScreenshotsReporting: true,
+    }
+]
+],
 
     
     //
@@ -233,8 +245,28 @@ exports.config = {
      * @param {boolean} result.passed    true if test has passed, otherwise false
      * @param {object}  result.retries   information about spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
-    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
-    // },
+
+
+afterTest: async (test, context, {
+    error, 
+    result, 
+    duration,
+    passed,
+    retries
+        }) => {
+            if (error) {
+            const fileName = test.title + ".png";
+            const dirPath = "./screenshots/";
+            if (!existsSync(dirPath)) {
+                mkdirSync (dirPath, {
+                    recursive: true,
+        });
+   
+        }
+            await browser.saveScreenshot (dirPath + fileName);
+        }
+    },
+    
 
 
     /**
@@ -277,8 +309,19 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    // onComplete: function(exitCode, config, capabilities, results) {
-    // },
+    onComplete: function () {
+        return new Promise((resolve, reject) => {
+            exec('allure generate allure-results --clean', (error, stdout, stderr) => {
+                if (error) {
+                    console.error('Failed to generate allure report:', error);
+                    return reject(error);
+                }
+                console.log(stdout);
+                console.log('Allure report successfully generated');
+                resolve();
+            });
+        });
+    },
     /**
     * Gets executed when a refresh happens.
     * @param {string} oldSessionId session ID of the old session

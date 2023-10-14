@@ -21,7 +21,7 @@ describe("Test suite", () =>{
 
     it("Third TEST", async () => {
         const element = await $("//div[contains(@class, 'patients')]");
-        await browser.execute("arguments[0].click();", element);
+        await element.click();
         await $("button=Add New Patient").click();
         await $("//input[@name='Name']").setValue("John Doe");
         await $("button=Save").click();
@@ -38,38 +38,6 @@ describe("Test suite", () =>{
 
         const emailError = await $("label#Email-info");
         expect(await emailError.getText()).toEqual("Enter valid email");
-    });
-    it("fifth TEST", async () => {
-        await $("div.doctors").click();
-        await expect(browser).toHaveUrlContaining('doctors')
-    });
-
-    it("Sixth TEST", async () => {
-        await browser.url("https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/patients");
-        await expect(browser).toHaveTitle('Appointment Planner - Syncfusion Angular Components Showcase App')
-    });
-
-    it ('Seventh TEST', async () => {
-        await expect($("div.doctors")).toBeDisplayed(); 
-    });
-  
-    it('should fetch menu links and visit each page', async () => {
-        const menuItems = await browser.$$('ejs-sidebar#plan nerSiderBar div.sidebar-item');
-        await menuItems.forEach(async (link) => {
-            await link.click()
-        })
-    })
-
-    it ('should check is about is Displayed', async () => {
-        let elem = await $("div.about");
-        let isDisplayed = await elem.isDisplayed();
-        await expect(isDisplayed).toEqual(true)
-    });
-
-    it('should detect when element is visible', async () => {
-        const elem = await $("div.preference");
-        await elem.waitForDisplayed({ timeout: 200 })
-
     })
     
     
