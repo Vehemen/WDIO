@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Test suite" timestamp="2023-10-14T19:23:14" time="3.907" tests="4" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="Test suite"/>
+      <property name="capabilities" value="firefox.118_0_2.windows"/>
+      <property name="file" value="file:///C:/Users/Akrapoy/wdiio/test/specs/basics.spec.js"/>
+    </properties>
+    <testcase classname="firefox.118_0_2.windows.Test_suite" name="Should check email error" time="2.087">
+      <system-out><![CDATA[
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/url - {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+RESULT: {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element - {"using":"xpath","value":".//a[normalize-space(text()) = \"View All\"] | .//a[not(.//a[normalize-space(text()) = \"View All\"]) and normalize-space() = \"View All\"]"}
+RESULT: {"using":"xpath","value":".//a[normalize-space(text()) = \"View All\"] | .//a[not(.//a[normalize-space(text()) = \"View All\"]) and normalize-space() = \"View All\"]"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element/d3ebb68d-e6af-4081-95f0-5bfa14334d99/click - {}
+RESULT: {}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element - {"using":"xpath","value":"//button[text()='Add New Doctor']"}
+RESULT: {"using":"xpath","value":"//button[text()='Add New Doctor']"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element/81d42fc2-765d-4b09-808a-157bdf5b9eeb/click - {}
+RESULT: {}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element - {"using":"xpath","value":"//input[@name='Name']"}
+RESULT: {"using":"xpath","value":"//input[@name='Name']"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element/d4e90d78-6e87-4609-839b-12369199d703/clear - {}
+RESULT: {}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element/d4e90d78-6e87-4609-839b-12369199d703/value - {"text":"John Doe"}
+RESULT: {"text":"John Doe"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element - {"using":"xpath","value":"//button[text()='Save']"}
+RESULT: {"using":"xpath","value":"//button[text()='Save']"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element/9783636b-7ad8-4de2-a232-a813fc260584/click - {}
+RESULT: {}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element - {"using":"css selector","value":"label#Email-info"}
+RESULT: {"using":"css selector","value":"label#Email-info"}
+COMMAND: GET /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element/7297e0c8-ba48-425a-a52b-17c907ba3fef/text - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+    <testcase classname="firefox.118_0_2.windows.Test_suite" name="should fetch menu links and visit each page" time="0.277">
+      <system-out><![CDATA[
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/url - {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+RESULT: {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/elements - {"using":"css selector","value":"ejs-sidebar#plan nerSiderBar div.sidebar-item"}
+RESULT: {"using":"css selector","value":"ejs-sidebar#plan nerSiderBar div.sidebar-item"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element - {"using":"xpath","value":".//a[normalize-space(text()) = \"View All\"] | .//a[not(.//a[normalize-space(text()) = \"View All\"]) and normalize-space() = \"View All\"]"}
+RESULT: {"using":"xpath","value":".//a[normalize-space(text()) = \"View All\"] | .//a[not(.//a[normalize-space(text()) = \"View All\"]) and normalize-space() = \"View All\"]"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element/4fc97a83-db32-476e-b00f-cf2c335bf1ae/click - {}
+RESULT: {}
+COMMAND: GET /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/url - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+    <testcase classname="firefox.118_0_2.windows.Test_suite" name="should check planner is about is Displayed" time="0.293">
+      <system-out><![CDATA[
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/url - {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+RESULT: {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element - {"using":"css selector","value":"div.calendar"}
+RESULT: {"using":"css selector","value":"div.calendar"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/elements - {"using":"css selector","value":"div.calendar"}
+RESULT: {"using":"css selector","value":"div.calendar"}
+COMMAND: GET /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element/eab75b9a-fa2c-4d59-9ae8-900e58fb0f32/displayed - {}
+RESULT: {}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element/eab75b9a-fa2c-4d59-9ae8-900e58fb0f32/click - {}
+RESULT: {}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element - {"using":"css selector","value":"div.planner-calendar"}
+RESULT: {"using":"css selector","value":"div.planner-calendar"}
+COMMAND: GET /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element/ef70995a-8643-4e82-87a3-7e717a3dd213/displayed - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+    <testcase classname="firefox.118_0_2.windows.Test_suite" name="Should update patients name" time="1.245">
+      <system-out><![CDATA[
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/url - {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+RESULT: {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/url - {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/patients"}
+RESULT: {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/patients"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element - {"using":"xpath","value":"/html/body/app-root/app-main/div/main/app-patients/div[1]/div/div[2]/ejs-grid/div[7]/div/table/tbody/tr[1]/td[2]/span"}
+RESULT: {"using":"xpath","value":"/html/body/app-root/app-main/div/main/app-patients/div[1]/div/div[2]/ejs-grid/div[7]/div/table/tbody/tr[1]/td[2]/span"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/elements - {"using":"xpath","value":"/html/body/app-root/app-main/div/main/app-patients/div[1]/div/div[2]/ejs-grid/div[7]/div/table/tbody/tr[1]/td[2]/span"}
+RESULT: {"using":"xpath","value":"/html/body/app-root/app-main/div/main/app-patients/div[1]/div/div[2]/ejs-grid/div[7]/div/table/tbody/tr[1]/td[2]/span"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/elements - {"using":"xpath","value":"/html/body/app-root/app-main/div/main/app-patients/div[1]/div/div[2]/ejs-grid/div[7]/div/table/tbody/tr[1]/td[2]/span"}
+RESULT: {"using":"xpath","value":"/html/body/app-root/app-main/div/main/app-patients/div[1]/div/div[2]/ejs-grid/div[7]/div/table/tbody/tr[1]/td[2]/span"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element - {"using":"xpath","value":"/html/body/app-root/app-main/div/main/app-patients/div[1]/div/div[2]/ejs-grid/div[7]/div/table/tbody/tr[1]/td[2]/span"}
+RESULT: {"using":"xpath","value":"/html/body/app-root/app-main/div/main/app-patients/div[1]/div/div[2]/ejs-grid/div[7]/div/table/tbody/tr[1]/td[2]/span"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element/1c1e13bf-f124-42ac-8a53-f455d04b3cbe/click - {}
+RESULT: {}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element - {"using":"xpath","value":"//button[text()='Edit']"}
+RESULT: {"using":"xpath","value":"//button[text()='Edit']"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element/02a2fd53-56c0-45b6-9b1a-d7a2a41ea1bc/click - {}
+RESULT: {}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element - {"using":"xpath","value":"//input[@name='Name']"}
+RESULT: {"using":"xpath","value":"//input[@name='Name']"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element/9c751c0b-0d3d-4c96-b28a-c1fc6ce7600f/clear - {}
+RESULT: {}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element/9c751c0b-0d3d-4c96-b28a-c1fc6ce7600f/value - {"text":"Display test"}
+RESULT: {"text":"Display test"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element - {"using":"xpath","value":"//button[text()='Save']"}
+RESULT: {"using":"xpath","value":"//button[text()='Save']"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element/80b009d3-23ba-4f14-ad39-7a7eba73edbd/click - {}
+RESULT: {}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/element - {"using":"xpath","value":"//span[text()='Display test']"}
+RESULT: {"using":"xpath","value":"//span[text()='Display test']"}
+COMMAND: POST /session/ede2ee63-37c6-44c9-a882-e1786d9936e7/elements - {"using":"xpath","value":"//span[text()='Display test']"}
+RESULT: {"using":"xpath","value":"//span[text()='Display test']"}
+COMMAND: DELETE /session/ede2ee63-37c6-44c9-a882-e1786d9936e7 - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>
