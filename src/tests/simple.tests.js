@@ -14,7 +14,7 @@ describe("Test suite", () => {
 
     it('Open add new doctor', async() => {
         //click doctors
-        await $('[routerlink="/doctors"]').click();
+        await dashboardPage.sideMenu.item('doctors').click();
         //click add new doctor
         await $('.specialization-types button.e-control').click();
         //check that modal window is displayed
