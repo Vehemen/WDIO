@@ -1,10 +1,11 @@
 const DashboardPage = require('../po/pages/dashboard.page');
+const DoctorsPage = require('../po/pages/doctors.page');
+
+const dashboardPage = new DashboardPage();
+const doctorsPage = new DoctorsPage();
 
 describe("Test suite", () => {
-    let dashboardPage;
-    
     beforeEach(async function () {
-        dashboardPage = new DashboardPage();
         await dashboardPage.open();
     });
 
@@ -16,7 +17,7 @@ describe("Test suite", () => {
         //click doctors
         await dashboardPage.sideMenu.item('doctors').click();
         //click add new doctor
-        await $('.specialization-types button.e-control').click();
+        await doctorsPage.doctorListHeader.addNewDoctorBtn.click()
         //check that modal window is displayed
         await expect($('.new-doctor-dialog')).toBeDisplayed();
     })
