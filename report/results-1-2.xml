@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Test suite" timestamp="2023-10-16T15:22:07" time="3.447" tests="4" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="Test suite"/>
+      <property name="capabilities" value="firefox.118_0_2.windows"/>
+      <property name="file" value="file:///C:/Users/Akrapoy/wdiio/src/tests/test.spec.js"/>
+    </properties>
+    <testcase classname="firefox.118_0_2.windows.Test_suite" name="First test" time="1.174">
+      <system-out><![CDATA[
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/url - {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+RESULT: {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+COMMAND: GET /session/6af02117-950f-4286-88ed-e2ce0756c988/title - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+    <testcase classname="firefox.118_0_2.windows.Test_suite" name="SECOND TEST" time="0.788">
+      <system-out><![CDATA[
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/url - {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+RESULT: {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element - {"using":"css selector","value":"div.doctors"}
+RESULT: {"using":"css selector","value":"div.doctors"}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element/50cc2edb-c521-42bb-a34b-6e08312eb1da/click - {}
+RESULT: {}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element - {"using":"xpath","value":"//button[text()='Add New Doctor']"}
+RESULT: {"using":"xpath","value":"//button[text()='Add New Doctor']"}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element/c9570dd3-c1cd-41f7-9afa-29cee287aba5/click - {}
+RESULT: {}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element - {"using":"css selector","value":"input[name='Name']"}
+RESULT: {"using":"css selector","value":"input[name='Name']"}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element/818e1f86-67d9-43a9-81a9-14f95ac54b3f/clear - {}
+RESULT: {}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element/818e1f86-67d9-43a9-81a9-14f95ac54b3f/value - {"text":"John Doe"}
+RESULT: {"text":"John Doe"}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element - {"using":"xpath","value":"//button[text()='Save']"}
+RESULT: {"using":"xpath","value":"//button[text()='Save']"}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element/7533533e-1dee-42bc-88f7-413dc60bf982/click - {}
+RESULT: {}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element - {"using":"css selector","value":"label#Email-info"}
+RESULT: {"using":"css selector","value":"label#Email-info"}
+COMMAND: GET /session/6af02117-950f-4286-88ed-e2ce0756c988/element/87ff34dd-97c7-4c13-84c5-6dd9e08fd8a3/text - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+    <testcase classname="firefox.118_0_2.windows.Test_suite" name="Third TEST" time="0.757">
+      <system-out><![CDATA[
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/url - {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+RESULT: {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element - {"using":"xpath","value":"//div[contains(@class, 'patients')]"}
+RESULT: {"using":"xpath","value":"//div[contains(@class, 'patients')]"}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element/eee98004-2b42-46ef-a510-4bc2bee8ab30/click - {}
+RESULT: {}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element - {"using":"xpath","value":".//button[normalize-space(text()) = \"Add New Patient\"] | .//button[not(.//button[normalize-space(text()) = \"Add New Patient\"]) and normalize-space() = \"Add New Patient\"]"}
+RESULT: {"using":"xpath","value":".//button[normalize-space(text()) = \"Add New Patient\"] | .//button[not(.//button[normalize-space(text()) = \"Add New Patient\"]) and normalize-space() = \"Add New Patient\"]"}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element/c3f385bb-7e81-47d3-b103-c0d77dfc6da4/click - {}
+RESULT: {}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element - {"using":"xpath","value":"//input[@name='Name']"}
+RESULT: {"using":"xpath","value":"//input[@name='Name']"}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element/1ba16e9d-f0bc-4a22-8dbc-5942dbaeb611/clear - {}
+RESULT: {}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element/1ba16e9d-f0bc-4a22-8dbc-5942dbaeb611/value - {"text":"John Doe"}
+RESULT: {"text":"John Doe"}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element - {"using":"xpath","value":".//button[normalize-space(text()) = \"Save\"] | .//button[not(.//button[normalize-space(text()) = \"Save\"]) and normalize-space() = \"Save\"]"}
+RESULT: {"using":"xpath","value":".//button[normalize-space(text()) = \"Save\"] | .//button[not(.//button[normalize-space(text()) = \"Save\"]) and normalize-space() = \"Save\"]"}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element/2fd509da-dcb1-456b-9e3c-e7a61d607113/click - {}
+RESULT: {}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element - {"using":"css selector","value":"label[id='Email-info']"}
+RESULT: {"using":"css selector","value":"label[id='Email-info']"}
+COMMAND: GET /session/6af02117-950f-4286-88ed-e2ce0756c988/element/a6cb2964-6fb5-45aa-9d73-6d7a6062f537/text - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+    <testcase classname="firefox.118_0_2.windows.Test_suite" name="fourth TEST" time="0.723">
+      <system-out><![CDATA[
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/url - {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+RESULT: {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element - {"using":"xpath","value":".//a[normalize-space(text()) = \"View All\"] | .//a[not(.//a[normalize-space(text()) = \"View All\"]) and normalize-space() = \"View All\"]"}
+RESULT: {"using":"xpath","value":".//a[normalize-space(text()) = \"View All\"] | .//a[not(.//a[normalize-space(text()) = \"View All\"]) and normalize-space() = \"View All\"]"}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element/7a179b61-464d-4114-8301-fc7c1cf9cabd/click - {}
+RESULT: {}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element - {"using":"xpath","value":"//button[text()='Add New Doctor']"}
+RESULT: {"using":"xpath","value":"//button[text()='Add New Doctor']"}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element/8cd007eb-d5c5-45f9-be31-4f069dd214fd/click - {}
+RESULT: {}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element - {"using":"xpath","value":"//input[@name='Name']"}
+RESULT: {"using":"xpath","value":"//input[@name='Name']"}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element/4962b338-0a3e-491e-bcf2-c0d1a7c51422/clear - {}
+RESULT: {}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element/4962b338-0a3e-491e-bcf2-c0d1a7c51422/value - {"text":"John Doe"}
+RESULT: {"text":"John Doe"}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element - {"using":"xpath","value":"//button[text()='Save']"}
+RESULT: {"using":"xpath","value":"//button[text()='Save']"}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element/a4749f29-7fb9-4987-8ed9-f42358a0f569/click - {}
+RESULT: {}
+COMMAND: POST /session/6af02117-950f-4286-88ed-e2ce0756c988/element - {"using":"css selector","value":"label#Email-info"}
+RESULT: {"using":"css selector","value":"label#Email-info"}
+COMMAND: GET /session/6af02117-950f-4286-88ed-e2ce0756c988/element/31ebb1d0-e3ae-4ae8-8931-f0867b8e58ba/text - {}
+RESULT: {}
+COMMAND: DELETE /session/6af02117-950f-4286-88ed-e2ce0756c988 - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

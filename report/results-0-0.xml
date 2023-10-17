@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Test suite" timestamp="2023-10-17T16:35:55" time="2.054" tests="4" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="Test suite"/>
+      <property name="capabilities" value="chrome.118_0_5993_71.windows"/>
+      <property name="file" value="file:///C:/Users/Akrapoy/wdiio/src/tests/simple.tests.js"/>
+    </properties>
+    <testcase classname="chrome.118_0_5993_71.windows.Test_suite" name="Check page title" time="1.169">
+      <system-out><![CDATA[
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/url - {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+RESULT: {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+COMMAND: GET /session/ff87ab8a9c68a735681a9af978cfb912/title - {}
+RESULT: {}
+COMMAND: GET /session/ff87ab8a9c68a735681a9af978cfb912/title - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+    <testcase classname="chrome.118_0_5993_71.windows.Test_suite" name="Open add new doctor" time="0.161">
+      <system-out><![CDATA[
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/url - {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+RESULT: {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":"[routerlink=\"/doctors\"]"}
+RESULT: {"using":"css selector","value":"[routerlink=\"/doctors\"]"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_31/click - {}
+RESULT: {}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":".specialization-types button.e-control"}
+RESULT: {"using":"css selector","value":".specialization-types button.e-control"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_44/click - {}
+RESULT: {}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":".new-doctor-dialog"}
+RESULT: {"using":"css selector","value":".new-doctor-dialog"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"E18CAD821176BDBC769481B4231B9EF7_element_56","ELEMENT":"E18CAD821176BDBC769481B4231B9EF7_element_56"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"E18CAD821176BDBC769481B4231B9EF7_element_56","ELEMENT":"E18CAD821176BDBC769481B4231B9EF7_element_56"}]}
+]]></system-out>
+    </testcase>
+    <testcase classname="chrome.118_0_5993_71.windows.Test_suite" name="Add a new doctor" time="0.55">
+      <system-out><![CDATA[
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/url - {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+RESULT: {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":"[routerlink=\"/doctors\"]"}
+RESULT: {"using":"css selector","value":"[routerlink=\"/doctors\"]"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_31/click - {}
+RESULT: {}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":".specialization-types button.e-control"}
+RESULT: {"using":"css selector","value":".specialization-types button.e-control"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_67/click - {}
+RESULT: {}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":".new-doctor-dialog"}
+RESULT: {"using":"css selector","value":".new-doctor-dialog"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"E18CAD821176BDBC769481B4231B9EF7_element_78","ELEMENT":"E18CAD821176BDBC769481B4231B9EF7_element_78"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"E18CAD821176BDBC769481B4231B9EF7_element_78","ELEMENT":"E18CAD821176BDBC769481B4231B9EF7_element_78"}]}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":"[name=\"Name\"]"}
+RESULT: {"using":"css selector","value":"[name=\"Name\"]"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_58/clear - {}
+RESULT: {}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_58/value - {"text":"John Doe"}
+RESULT: {"text":"John Doe"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":"#DoctorMobile"}
+RESULT: {"using":"css selector","value":"#DoctorMobile"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_82/clear - {}
+RESULT: {}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_82/value - {"text":"11111111111111"}
+RESULT: {"text":"11111111111111"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":"[name=\"Email\"]"}
+RESULT: {"using":"css selector","value":"[name=\"Email\"]"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_59/clear - {}
+RESULT: {}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_59/value - {"text":"test@test.com"}
+RESULT: {"text":"test@test.com"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":"[name=\"Education\"]"}
+RESULT: {"using":"css selector","value":"[name=\"Education\"]"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_94/clear - {}
+RESULT: {}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_94/value - {"text":"Basic"}
+RESULT: {"text":"Basic"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":"[name=\"Designation\"]"}
+RESULT: {"using":"css selector","value":"[name=\"Designation\"]"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_96/clear - {}
+RESULT: {}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_96/value - {"text":"Test"}
+RESULT: {"text":"Test"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"xpath","value":"//button[normalize-space()='Save']"}
+RESULT: {"using":"xpath","value":"//button[normalize-space()='Save']"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_99/click - {}
+RESULT: {}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":".new-doctor-dialog"}
+RESULT: {"using":"css selector","value":".new-doctor-dialog"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"E18CAD821176BDBC769481B4231B9EF7_element_78","ELEMENT":"E18CAD821176BDBC769481B4231B9EF7_element_78"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"E18CAD821176BDBC769481B4231B9EF7_element_78","ELEMENT":"E18CAD821176BDBC769481B4231B9EF7_element_78"}]}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":"#Specialist_8"}
+RESULT: {"using":"css selector","value":"#Specialist_8"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_101/element - {"using":"css selector","value":".name"}
+RESULT: {"using":"css selector","value":".name"}
+COMMAND: GET /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_104/text - {}
+RESULT: {}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":"#Specialist_8"}
+RESULT: {"using":"css selector","value":"#Specialist_8"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_101/element - {"using":"css selector","value":".education"}
+RESULT: {"using":"css selector","value":".education"}
+COMMAND: GET /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_105/text - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+    <testcase classname="chrome.118_0_5993_71.windows.Test_suite" name="Open and close add new doctor window" time="0.17">
+      <system-out><![CDATA[
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/url - {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+RESULT: {"url":"https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":"[routerlink=\"/doctors\"]"}
+RESULT: {"using":"css selector","value":"[routerlink=\"/doctors\"]"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_31/click - {}
+RESULT: {}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":".specialization-types button.e-control"}
+RESULT: {"using":"css selector","value":".specialization-types button.e-control"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_123/click - {}
+RESULT: {}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":".new-doctor-dialog"}
+RESULT: {"using":"css selector","value":".new-doctor-dialog"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"E18CAD821176BDBC769481B4231B9EF7_element_134","ELEMENT":"E18CAD821176BDBC769481B4231B9EF7_element_134"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"E18CAD821176BDBC769481B4231B9EF7_element_134","ELEMENT":"E18CAD821176BDBC769481B4231B9EF7_element_134"}]}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":".e-dlg-closeicon-btn"}
+RESULT: {"using":"css selector","value":".e-dlg-closeicon-btn"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element/E18CAD821176BDBC769481B4231B9EF7_element_137/click - {}
+RESULT: {}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/element - {"using":"css selector","value":".new-doctor-dialog"}
+RESULT: {"using":"css selector","value":".new-doctor-dialog"}
+COMMAND: POST /session/ff87ab8a9c68a735681a9af978cfb912/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"E18CAD821176BDBC769481B4231B9EF7_element_134","ELEMENT":"E18CAD821176BDBC769481B4231B9EF7_element_134"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"E18CAD821176BDBC769481B4231B9EF7_element_134","ELEMENT":"E18CAD821176BDBC769481B4231B9EF7_element_134"}]}
+COMMAND: DELETE /session/ff87ab8a9c68a735681a9af978cfb912 - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>
