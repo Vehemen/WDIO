@@ -1,12 +1,14 @@
-describe("Test suite", () =>{
+const DashboardPage = require('../po/pages/dashboard.page');
 
+describe("Test suite", () => {
+    let dashboardPage;
+    
     beforeEach(async function () {
-        await browser.url("https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard");
-    })
+        dashboardPage = new DashboardPage();
+        await dashboardPage.open();
+    });
 
     it('Check page title', async() =>{
-        const title = await browser.getTitle()
-        console.log(title)
         await expect(browser).toHaveTitle ('Appointment Planner - Syncfusion Angular Components Showcase App')
     })
 
