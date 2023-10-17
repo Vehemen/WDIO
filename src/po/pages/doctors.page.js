@@ -1,13 +1,12 @@
-const ListHeaderComponent = require('../components/doctors/list-header.component');
-const addDoctorComponent = require('../components/doctors/add-doctor.component');
-class DoctorsPage {
-    constructor() {
-        this.doctorListHeader = new ListHeaderComponent();
-        this.addDoctorModal = new addDoctorComponent();
-    }
+const BasePage = require('./base.page')
 
-    async open() {
-        await browser.url('https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/doctors');
+const {DoctorListHeader, AddDoctorModal} = require('../components');
+
+class DoctorsPage extends BasePage{
+    constructor() {
+        super('showcase/angular/appointmentplanner/#/doctors')
+        this.doctorListHeader = new DoctorListHeader();
+        this.addDoctorModal = new AddDoctorModal();
     }
 }
 

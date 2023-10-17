@@ -16,39 +16,36 @@ describe("Test suite", () => {
     it('Open add new doctor', async() => {
         //click doctors
         await dashboardPage.sideMenu.item('doctors').click();
-        //click add new doctor
         await doctorsPage.doctorListHeader.addNewDoctorBtn.click()
-        //check that modal window is displayed
-        await expect($('.new-doctor-dialog')).toBeDisplayed();
+        await expect(doctorsPage.addDoctorModal.rootEL).toBeDisplayed();
     })
 
     it('Add a new doctor', async () => {
   
-    // click on doctors item in the side menu
-    await $('[routerlink="/doctors"]').click();
-    // click on add new doctor btn
-    await $('.specialization-types button.e-control').click();
-    // wait for visibility of modal window
-    await $('.new-doctor-dialog').waitForDisplayed();
+        await dashboardPage.sideMenu.item('doctors').click();
+        await doctorsPage.doctorListHeader.addNewDoctorBtn.click();
+        await doctorsPage.addDoctorModal.rootEL.waitForDisplayed();
 
-    await $('[name="Name"]').setValue('John Doe');
-    await $('#DoctorMobile').setValue('11111111111111');
-    await $('[name="Email"]').setValue('test@test.com');
-    await $('[name="Education"]').setValue('Basic');
-    await $('[name="Designation"]').setValue('Test');
+        await $('[name="Name"]').setValue('John Doe');
+        await $('#DoctorMobile').setValue('11111111111111');
+        await $('[name="Email"]').setValue('test@test.com');
+        await $('[name="Education"]').setValue('Basic');
+        await $('[name="Designation"]').setValue('Test');
 
-    await $("//button[normalize-space()='Save']").click();
+        await $("//button[normalize-space()='Save']").click();
 
-    await expect($('.new-doctor-dialog')).not.toBeDisplayed();
-    await expect($('#Specialist_8').$('.name')).toHaveText('Dr. John Doe');
-    await expect($('#Specialist_8').$('.education')).toHaveText('Basic', {ignoreCase: true});
+        await expect(doctorsPage.addDoctorModal.rootEL).not.toBeDisplayed();
+        
+        await expect($('#Specialist_8').$('.name')).toHaveText('Dr. John Doe');
+        await expect($('#Specialist_8').$('.education')).toHaveText('Basic', {ignoreCase: true});
     });
 
     it('Open and close add new doctor window', async() => {
-        await $('[routerlink="/doctors"]').click();
-        await $('.specialization-types button.e-control').click();
-        await $('.new-doctor-dialog').waitForDisplayed();
+        await dashboardPage.sideMenu.item('doctors').click();
+        await doctorsPage.doctorListHeader.addNewDoctorBtn.click();
+        await doctorsPage.addDoctorModal.rootEL.waitForDisplayed();
         await $('.e-dlg-closeicon-btn').click();
-        await expect($('.new-doctor-dialog')).not.toBeDisplayed();
+
+        await expect(doctorsPage.addDoctorModal.rootEL).not.toBeDisplayed();
     });
 });
