@@ -1,3 +1,5 @@
+const {pages} = require('../po');
+
 describe("Test suite", () =>{
 
     beforeEach(async function () {
@@ -6,12 +8,12 @@ describe("Test suite", () =>{
 
 
     it("Should check email error", async () => {
-        await $("a=View All").click();
-        await $("//button[text()='Add New Doctor']").click();
-        await $("//input[@name='Name']").setValue("John Doe");
-        await $("//button[text()='Save']").click();
+        await pages('dashboard').viewAllDoctors();
+        await pages('doctors').doctorListHeader.addNewDoctorBtn.click()
+        await pages('doctors').addDoctorModal.input('name').setValue('John Doe');
+        await pages('doctors').addDoctorModal.saveBtn.click();
 
-        const emailError = await $("label#Email-info");
+        const emailError = await pages('doctors').addDoctorModal.emailError;
         expect(await emailError.getText()).toEqual("Enter valid email");
     });
   
@@ -36,7 +38,7 @@ describe("Test suite", () =>{
     });
 
     it('Should update patients name', async () => {
-        await browser.url("https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/patients");
+       await pages("dashboard").sideMenu.item('patients').click();
     
         const element = await browser.$('/html/body/app-root/app-main/div/main/app-patients/div[1]/div/div[2]/ejs-grid/div[7]/div/table/tbody/tr[1]/td[2]/span');
         await element.click(); 

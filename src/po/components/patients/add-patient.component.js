@@ -1,6 +1,6 @@
 const BaseComponent = require('./../common/base.component')
 
-class AddDoctorComponent extends BaseComponent{
+class AddPatientsComponent extends BaseComponent{
 
     constructor() {
         super('.new-doctor-dialog')
@@ -37,4 +37,4 @@ class AddDoctorComponent extends BaseComponent{
 }
   
 
-module.exports = AddDoctorComponent;
+module.exports = AddPatientsComponent;
