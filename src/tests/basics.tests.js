@@ -29,7 +29,7 @@ describe("Test suite", () =>{
 
     })
     it ('should check planner is about is Displayed', async () => {
-        await pages('dashboard').waitForAndClick(); //custom click
+        await pages('dashboard').sideMenu.item('calendar').waitForAndClick(); //custom click
 
         let elem = await pages('dashboard').sideMenu.item('calendar');
         let isDisplayed = await elem.isDisplayed();

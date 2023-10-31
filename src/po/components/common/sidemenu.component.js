@@ -21,6 +21,7 @@ class SideMenuComponent extends BaseComponent {
             schedule: '[routerLink="/calendar"]',
             doctors: '[routerLink="/doctors"]',
             patients: '[routerLink="/patients"]',
+            calendar: '[routerLink="/calendar"]'
         };
         return this.rootEL.$(selectors[param.toLowerCase()]);
     }
