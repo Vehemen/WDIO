@@ -3,7 +3,7 @@ const {pages} = require('../po');
 describe("Test suite", () =>{
 
     beforeEach(async function () {
-        await browser.url("https://ej2.syncfusion.com/showcase/angular/appointmentplanner/#/dashboard");
+        await pages('dashboard').open();
       });
 
 
@@ -18,12 +18,12 @@ describe("Test suite", () =>{
     });
   
     it('should fetch menu links and visit each page', async () => {
-        const menuItems = await browser.$$('ejs-sidebar#plan nerSiderBar div.sidebar-item');
+        const menuItems = await pages('dashboard').sideMenu.getAllMenuItem();
         
         await menuItems.forEach(async (link) => {
             await link.click()
         })
-        await $("a=View All").click();
+        await pages('dashboard').viewAllDoctors()
         
         await expect(browser).toHaveUrlContaining('doctors')
 
@@ -40,13 +40,12 @@ describe("Test suite", () =>{
     it('Should update patients name', async () => {
        await pages("dashboard").sideMenu.item('patients').click();
     
-        const element = await browser.$('/html/body/app-root/app-main/div/main/app-patients/div[1]/div/div[2]/ejs-grid/div[7]/div/table/tbody/tr[1]/td[2]/span');
+        const element = await pages('patients').edit(7);
         await element.click(); 
-        await $("//button[text()='Edit']").click();
-        await $("//input[@name='Name']").setValue("Display test");
-        await $("//button[text()='Save']").click();
-        const expectedName = 'Display test'; 
-        const patientElement = await browser.$(`//span[text()='${expectedName}']`);
+        await pages('patients').PatientDetailsComponent.editBtn.click();
+        await pages('patients').PatientDetailsComponent.input('name').setValue("Display test");
+        await pages('patients').addPatientsModal.saveBtn.click();
+        const patientElement = await pages('patients').patientNameSearch('Display test');
         const isExisting = await patientElement.isExisting();
         
         expect(isExisting).toBe(true);

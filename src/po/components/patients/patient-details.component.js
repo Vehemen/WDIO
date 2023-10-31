@@ -1,15 +1,18 @@
 const BaseComponent = require('./../common/base.component')
 
-class AddPatientsComponent extends BaseComponent{
+class PatientDetailsComponent extends BaseComponent{
 
     constructor() {
-        super('.new-patient-dialog')
+        super(".new-patient-dialog")
     };
+    
+    get editBtn() {
+        return this.rootEL.$("//button[text()='Edit']")
+    }
 
     get saveBtn() {
         return this.rootEL.$("//button[normalize-space()='Save']")
     }
-    
 
     get closeBtn() {
         return this.rootEL.$('.e-dlg-closeicon-btn')
@@ -38,4 +41,4 @@ class AddPatientsComponent extends BaseComponent{
 }
   
 
-module.exports = AddPatientsComponent;
+module.exports = PatientDetailsComponent;

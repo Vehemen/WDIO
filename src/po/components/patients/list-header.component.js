@@ -6,9 +6,10 @@ class PatientsListHeader extends BaseComponent{
         super('.specialization-types')
     }
 
-    get addNewDoctorBtn() {
+    get addNewPatientrBtn() {
         return this.rootEL.$('button.e-control');
     }
+
 }
 
 module.exports = PatientsListHeader;

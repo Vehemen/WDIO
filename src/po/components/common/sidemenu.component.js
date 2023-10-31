@@ -9,6 +9,11 @@ class SideMenuComponent extends BaseComponent {
     get name() {
         return this.rootEL.$('.name');
     }
+    
+    async getAllMenuItem() {
+        await this.rootEL; // Ensure rootEL is resolved
+        return this.rootEL.$$('ejs-sidebar#plan nerSiderBar div.sidebar-item');
+    }
 
     item(param) {
         const selectors = {

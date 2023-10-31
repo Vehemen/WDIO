@@ -5,6 +5,7 @@ const DoctorListHeader = require('./doctors/list-header.component');
 const SpecialistCard = require('./doctors/specialist-card.component');
 const PatientsListHeader = require('./patients/list-header.component');
 const AddDPatientsModal = require('./patients/add-patient.component');
+const PatientDetailsComponent = require('./patients/patient-details.component')
 
 module.exports = {
     Header,
@@ -13,5 +14,6 @@ module.exports = {
     DoctorListHeader,
     SpecialistCard,
     PatientsListHeader,
-    AddDPatientsModal
+    AddDPatientsModal,
+    PatientDetailsComponent
 }
