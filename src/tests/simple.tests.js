@@ -10,7 +10,6 @@ describe("Test suite", () => {
     })
 
     it('Open add new doctor', async() => {
-        //click doctors
         await pages('dashboard').sideMenu.item('doctors').click();
         await pages('doctors').doctorListHeader.addNewDoctorBtn.click()
         await expect(pages('doctors').addDoctorModal.rootEL).toBeDisplayed();
