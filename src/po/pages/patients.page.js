@@ -1,6 +1,6 @@
 const BasePage = require('./base.page')
 
-const {PatientsListHeader, AddDPatientsModal, SpecialistCard, PatientDetailsComponent} = require('./../components');
+const {PatientsListHeader, AddDPatientsModal, PatientDetailsComponent} = require('./../components');
 
 class PatientsPage extends BasePage{
 
@@ -11,9 +11,6 @@ class PatientsPage extends BasePage{
         this.PatientDetailsComponent = new PatientDetailsComponent();
     }
 
-    specialistCard(id) {
-        return new SpecialistCard(id)
-    }
     async patientNameSearch(expectedName) {
         return await browser.$(`//span[text()='${expectedName}']`);
     }

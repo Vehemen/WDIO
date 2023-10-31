@@ -4,8 +4,8 @@ const PatientsPage = require('./patients.page');
 const CalendarPage = require('./planner-calendar.page')
 
 /**
- * @param name {'dashboard' | 'doctors' | 'patients'}
- * @returns {DashboardPage | DoctorsPage | PatientsPage}
+ * @param name {'dashboard' | 'doctors' | 'patients' | 'calendar'}
+ * @returns {DashboardPage | DoctorsPage | PatientsPage | CalendarPage}
  */
 
 function pages(name) {
