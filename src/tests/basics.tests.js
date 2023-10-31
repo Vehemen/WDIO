@@ -29,9 +29,9 @@ describe("Test suite", () =>{
 
     })
     it ('should check planner is about is Displayed', async () => {
-        await $("div.calendar").waitForAndClick(); //custom click
+        await pages('dashboard').waitForAndClick(); //custom click
 
-        let elem = await $("div.planner-calendar");
+        let elem = await pages('dashboard').sideMenu.item('calendar');
         let isDisplayed = await elem.isDisplayed();
 
         await expect(isDisplayed).toEqual(true)
